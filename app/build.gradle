@@ -34,7 +34,7 @@ androidExtensions {
 }
 
 dependencies {
-   implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
@@ -48,6 +48,7 @@ dependencies {
     implementation 'androidx.slice:slice-builders-ktx:1.0.0-alpha6'
 
     // Testing
+    implementation 'androidx.slice:slice-builders:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0-beta01'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-beta01'

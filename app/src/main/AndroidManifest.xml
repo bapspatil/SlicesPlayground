@@ -30,7 +30,7 @@
 
                 <data
                     android:host="bapspatil.com"
-                    android:pathPrefix="/slicedemo"
+                    android:pathPrefix="/hello"
                     android:scheme="http" />
             </intent-filter>
         </provider>

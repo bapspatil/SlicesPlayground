@@ -9,6 +9,8 @@ import androidx.slice.Slice
 import androidx.slice.SliceProvider
 import androidx.slice.builders.ListBuilder
 import androidx.slice.builders.SliceAction
+import androidx.slice.builders.list
+import androidx.slice.builders.row
 
 class MySliceProvider : SliceProvider() {
     /**
@@ -51,22 +53,20 @@ class MySliceProvider : SliceProvider() {
             // Path recognized. Customize the Slice using the androidx.slice.builders API.
             // Note: ANR and StrictMode are enforced here so don't do any heavy operations. 
             // Only bind data that is currently available in memory.
-            ListBuilder(context, sliceUri, ListBuilder.INFINITY)
-                    .addRow(
-                            ListBuilder.RowBuilder()
-                                    .setTitle("Hello world!")
-                                    .setPrimaryAction(activityAction)
-                    )
-                    .build()
+            list(context, sliceUri, ListBuilder.INFINITY) {
+                row {
+                    title = "Hello world!"
+                    primaryAction = activityAction
+                }
+            }
         } else {
             // Error: Path not found.
-            ListBuilder(context, sliceUri, ListBuilder.INFINITY)
-                    .addRow(
-                            ListBuilder.RowBuilder()
-                                    .setTitle("URI not found.")
-                                    .setPrimaryAction(activityAction)
-                    )
-                    .build()
+            list(context, sliceUri, ListBuilder.INFINITY) {
+                row {
+                    title = "URI not found."
+                    primaryAction = activityAction
+                }
+            }
         }
     }
 

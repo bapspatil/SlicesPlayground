@@ -31,7 +31,7 @@ class MySliceProvider : SliceProvider() {
         if (intent == null) return uriBuilder.build()
         val data = intent.data
         if (data != null && data.path != null) {
-            val path = data.path.replace("/", "")
+            val path = data.path.replace("/hello", "")
             uriBuilder = uriBuilder.path(path)
         }
         val context = context
@@ -71,7 +71,7 @@ class MySliceProvider : SliceProvider() {
     }
 
     private fun createActivityAction(): SliceAction? {
-//        Instead of returning null, you should create a SliceAction. Here is an example:
+        // You should create a SliceAction. Here is an example:
         return SliceAction.create(
             PendingIntent.getActivity(
                 context, 0, Intent(context, MainActivity::class.java), 0

@@ -25,9 +25,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.app.slice.category.SLICE" />
-
                 <data
                     android:host="bapspatil.com"
                     android:pathPrefix="/hello"
